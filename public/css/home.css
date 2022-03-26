@@ -1,0 +1,63 @@
+@import 'nav.css';
+
+/** Global variables */
+:root{
+    --zero-value: 0;
+}
+
+/** Override browsers style */
+
+*{
+    margin: var(--zero-value);
+    padding: var(--zero-value);
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.hero-section{
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-image: url('../img/header.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section .logo{
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+
+.hero-section  .sub-heading{
+    margin-top: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.product{
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.product-category{
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 30px;
+    padding: 0 10vw;
+
+}
+
+.product-container{
+    padding: 0 10vw;
+    display: flex;
+    height: 450px;
+    margin-right: 40px;
+}
