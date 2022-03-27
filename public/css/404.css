@@ -1,0 +1,17 @@
+.four-image{
+    display: block;
+    margin: 60px auto;
+}
+
+.four-des{
+   text-align: center;
+   text-transform: capitalize;
+   color: #383838;
+}
+
+.four-des a{
+    color: #383838;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+}
