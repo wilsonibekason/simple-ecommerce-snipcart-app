@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Signup page</title>
+</head>
+<body>
+    <img src="img/loader.gif" alt="" class="loader">
+
+    <div class="container">
+        <img src="img/dark-logo.png" alt="" class="logo">
+        <div>
+            <input type="text" autocomplete="off" id="name" placeholder="name">
+            <input type="email" autocomplete="off" id="name" placeholder="name">
+            <input type="password" autocomplete="off" id="name" placeholder="password">
+            <input type="text" autocomplete="off" id="name" placeholder="Number">
+            <input type="checkbox" checked class="checkbox" id="terms-and-cons">
+            <label for="terms-and-cons">Agree to our <a href="#"> terms and conditions </a></label>
+            <br>
+            <input type="checkbox" class="checkbox" id="notification">
+            <label for="notification">receive  upcoming offers and events mails</label>
+            <button class="submit-btn">create account</button>
+        </div>
+        <a href="/login" class="link">already have an account?. Login in here</a>
+    </div>
+
+    <div class="alert-box">
+        <img src="img/error.png" alt="" class="alert-image"> 
+        <p class="error-message alert-msg">
+            There is an error
+        </p>
+    </div>
+    <script src="js/token.js"></script>
+</body>
+</html>
