@@ -22,6 +22,6 @@ const analytics = getAnalytics(app);
 
 
 /// firebase login and init and setup
-firebase login
-firebase init
+// firebase login
+// firebase init
 

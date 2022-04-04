@@ -3,6 +3,7 @@
    --light-color: #f5f5f5;
    --white-100: #fff;
    --grey-500: #383838;
+   --light-color-900: #f5f5f5'
 }
 
 *{
@@ -78,6 +79,11 @@ textarea{
     margin: 30px 0;
 }
 
+.submit-btn:hover{
+    color: var(--grey-500);
+    background: var(--light-color);
+}
+
 /** checkbox styles */
 
 .checkbox{
@@ -144,9 +150,9 @@ label a{
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    opacgity: 0;
+    opacity: 0;
     pointer-events: none;
-    transitigon: 1s;
+    transition: 1s;
 }
 
 .alert-box.show{

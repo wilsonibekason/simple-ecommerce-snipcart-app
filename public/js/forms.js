@@ -1,7 +1,5 @@
 import { response } from "express";
-    
-const loader = document.querySelector('.loader');
-// selecting inputs
+
 const submitBtn = document.querySelector('#submit-btn');
 const names = document.querySelector('#name');
 const email = document.querySelector('#email');
@@ -10,33 +8,44 @@ const num = document.querySelector('#number');
 const tac = document.querySelector('#terms-and-con');
 const notification = document.querySelector('#notification');
 
-/// showalert function
-const showAlert = (msg) =>{
+const showAlert = (msg) => {
     let alertBox = document.querySelector('.alert-box');
-    let alertMsg  = document.querySelector('.error-message');
-    alertMsg.innerHMTL = msg;
+    let alertMsg  = document.querySelector('#alert-msg');
+    alertMsg.innerHTML = msg;
     alertBox.classList.add('show');
     setTimeout(() => {
         alertBox.classList.remove('show');
     }, 3000)
 }
+   // handling process data function in the front-end
+   const processData = (data) => {
+       loader.style.display  =  null;
+       if(data.alert){
+           showAlert(data.alert);
+       }  else if(data.name){
+           // create authtoken
+           data.authToken = generateToken(data.email);
+           sessionStorage.user = JSON.stringify(data);
+           location.replace('/');
+       }
+   }     
 
-/// send data function
+/// send-data functionality
 const sendData = (path, data) => {
-       fetch(path, {
-           method: 'post',
-           headers: new Headers({'Content-Type': 'application/json'}),
-           body: JSON.stringify(data),
-           
-       }).then((res) => res.json()).then(response => {
-           processData(response);
-       })
+    fetch(path, {
+        method: 'post',
+        headers: new Headers({'Content-Type': 'application/json'}),
+        body: JSON.stringify(data),
+        
+    }).then((res) => res.json()).then(response => {
+        processData(response);
+    })
 }
 
-/// submit button functionality
+
 
 submitBtn.addEventListener('click', () => {
-    alert('hello validated')
+
     if(names.value.length < 3){
          showAlert('name must be 3 letters long');
          //alert('bad input')
@@ -45,7 +54,7 @@ submitBtn.addEventListener('click', () => {
         } else if(password.value.length < 9){
           showAlert('password should be eight letters long');
          } 
-           else if(!Number(num.value) || num.value.length < 10){
+         else if(!Number(num.value) || num.value.length < 10){
             showAlert("this is not a valid number");
         } else if(!num.value.length){
              showAlert("enter your phone number");
@@ -63,5 +72,5 @@ submitBtn.addEventListener('click', () => {
              notification: notification.checked,
              seller: false
          })
-}
-})
+        }
+         })
